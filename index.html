@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Havalı bir arka plan */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Gölge efekti */
+        text-align: center;
+        max-width: 300px;
+    }
+
+    .card img {
+        border-radius: 50%; /* Resmi yuvarlak yapar */
+        border: 5px solid #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    button {
+        background-color: #764ba2;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.1); /* Üstüne gelince hafifçe büyür */
+    }
+    .social-links {
+    display: flex; /* Sihirli değnek: Elemanları yan yana dizer */
+    justify-content: center; /* Ortalar */
+    gap: 15px; /* Aralarındaki mesafeyi ayarlar */
+    margin: 20px 0; /* Üstten ve alttan boşluk bırakır */
+}
+.video-container {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.video-container h3 {
+    margin-top: 0;
+    color: #764ba2;
+    font-size: 1rem;
+}
+.social-icon {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #764ba2;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #764ba2;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #764ba2;
+    color: white;
+
+</style>
+</head>
+<body>
+
+ <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Profil Resmi">
+        <h1 id="baslik">Yazılımcı Adayı</h1>
+        <p>HTML, CSS ve JS öğreniyorum. Bu benim ilk profesyonel denemem!</p>
+        <div class="social-links">
+    <div class="video-container">
+    <h3>Günün Şarkısı</h3>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/ild4oGEh9Bs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+        <button onclick="renkDegistir()">Arka Planı Değiştir</button>
+    </div>
+        <button onclick="isimDegistir()">İmzamı At</button>
+    <script>
+        function selamVer() {
+            alert("Harika gidiyorsun! Kod yazmaya devam et.");
+        }
+    </script>
+    <script>
+    function renkDegistir() {
+        // Rastgele bir renk kodu oluşturur
+        const rastgeleRenk = "#" + Math.floor(Math.random()*16777215).toString(16);
+        
+        // Sayfanın arka planını bu renge boyar
+        document.body.style.background = rastgeleRenk;
+        
+        // Konsola ne yaptığımızı yazalım (F12 ile bakabilirsin)
+        console.log("Yeni renk: " + rastgeleRenk);
+    }
+    function isimDegistir() {
+    // 1. Adım: "baslik" ID'li elemanı bul
+    const baslikElemani = document.getElementById("baslik");
+    
+    // 2. Adım: Kullanıcıdan bir isim iste (açılır pencere ile)
+    const yeniIsim = prompt("Lütfen adınızı yazın:");
+    
+    // 3. Adım: Eğer isim boş değilse, başlığı o isimle değiştir
+    if (yeniIsim != null && yeniIsim != "") {
+        baslikElemani.innerHTML = yeniIsim;
+        baslikElemani.style.color = "#ff7675"; // İstersen rengini de değiştirebilirsin!
+    }
+}
+</script>
+</body>
+</html>
